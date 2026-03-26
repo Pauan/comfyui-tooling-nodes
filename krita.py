@@ -214,12 +214,16 @@ class KritaSelection(io.ComfyNode):
                 io.Boolean.Output("active", "active"),
                 io.Int.Output("x", "offset x"),
                 io.Int.Output("y", "offset y"),
+                io.Int.Output("selection_x", "selection x"),
+                io.Int.Output("selection_y", "selection y"),
+                io.Int.Output("selection_width", "selection width"),
+                io.Int.Output("selection_height", "selection height"),
             ],
         )
 
     @classmethod
     def execute(cls, **kwargs):
-        return io.NodeOutput(torch.ones(1, 512, 512), False, 0, 0)
+        return io.NodeOutput(torch.ones(1, 512, 512), False, 0, 0, 0, 0, 512, 512)
 
 
 class KritaImageLayer(io.ComfyNode):
