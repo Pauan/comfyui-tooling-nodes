@@ -259,6 +259,29 @@ class KritaMaskLayer(io.ComfyNode):
         return io.NodeOutput(torch.ones(1, 512, 512))
 
 
+class KritaGroupLayer(io.ComfyNode):
+    @classmethod
+    def define_schema(cls):
+        return io.Schema(
+            node_id="ETN_KritaGroupLayer",
+            display_name="Krita Group Layer",
+            description="Returns a list of images / masks / names from a group layer.",
+            category="krita",
+            inputs=[
+                io.String.Input("name", default="Group"),
+            ],
+            outputs=[
+                io.Image.Output(display_name="images", is_output_list=True),
+                io.Mask.Output(display_name="masks", is_output_list=True),
+                io.String.Output(display_name="names", is_output_list=True),
+            ],
+        )
+
+    @classmethod
+    def execute(cls, name: str, mode):
+        return io.NodeOutput([_placeholder_image()], [torch.ones(1, 512, 512)], [""])
+
+
 _param_types = [
     "auto",
     "number",
