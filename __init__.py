@@ -28,6 +28,7 @@ class ExternalToolingNodes(ComfyExtension):
             krita.KritaSendText,
             krita.KritaCanvas,
             krita.KritaSelection,
+            krita.KritaSelectionBounds,
             krita.KritaImageLayer,
             krita.KritaMaskLayer,
             krita.Parameter,
