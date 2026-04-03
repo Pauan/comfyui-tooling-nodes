@@ -42,13 +42,13 @@ class ListAppend(io.ComfyNode):
             category="external_tooling",
             inputs=[
                 io.AnyType.Input("list"),
-                io.String.Input("item"),
+                io.AnyType.Input("item"),
             ],
             outputs=[io.AnyType.Output()],
         )
 
     @classmethod
-    def execute(cls, list: list[Any], item: str):
+    def execute(cls, list: list[Any], item: Any):
         list = list.copy()
         list.append(item)
         return io.NodeOutput(list)
