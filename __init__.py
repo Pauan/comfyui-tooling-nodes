@@ -33,7 +33,6 @@ class ExternalToolingNodes(ComfyExtension):
             krita.KritaSelection,
             krita.KritaImageLayer,
             krita.KritaMaskLayer,
-            krita.KritaGroupLayer,
             krita.Parameter,
             krita.KritaStyle,
             krita.KritaStyleAndPrompt,
